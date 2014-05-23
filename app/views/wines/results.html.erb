@@ -1,0 +1,6 @@
+<h1>Search Results:</h1>
+
+<% @wines.each do |wine| %>
+  <p><%= link_to wine["name"], selection_path + "?q=#{wine["name"]}" %></p>
+
+<% end %>

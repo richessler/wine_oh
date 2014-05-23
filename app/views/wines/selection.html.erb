@@ -1,0 +1,11 @@
+<% @wines.each do |wine| %>
+
+<h1><%= wine["name"] %></h1>
+
+<h2>Region: <%= wine["region"] %></h2>
+
+<img src="<%= wine["image"] %>">
+
+<p>Vintage: <%= wine["vintage"]%> </p>
+
+<% end %>
