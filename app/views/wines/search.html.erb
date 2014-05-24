@@ -4,11 +4,14 @@
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
 
-  <%= label_tag(:n, "Limit Search to:") %>
-  <%= select_tag(:n, options_for_select(1..100))%>
+  <%= label_tag(:n, 'Limit Search:') %>
+  <%= select_tag(:n, options_for_select(1..100, 25))%>
 
   <%= label_tag(:color, "Color:") %>
   <%= select_tag(:color, options_for_select(['red', 'white', 'rose', 'amber', 'clear']), {include_blank: 'name of your blank prompt'}) %>
+
+  <%= label_tag(:xp, "Max Price:") %>
+  <%= text_field_tag(:xp) %>
 
   <%= submit_tag("Search") %>
 <% end %>

@@ -12,14 +12,18 @@ class WinesController < ApplicationController
   end
 
   def results
-    @wines = get_wine_url(params[:q], params[:n])
+    @wines = get_wine_url(params[:q], params[:color], params[:n])
   end
 
   private
 
-  def get_wine_url(wine, limit = 100)
+  def get_wine_url(wine, color='', limit = 100)
     wine = wine.gsub(" ", "+")
-    response = HTTParty.get("http://api.snooth.com/wines/?akey=#{SNOOTH_API}&n=#{limit}&q=#{wine}")
+    if color == ''
+      response = HTTParty.get("http://api.snooth.com/wines/?akey=#{SNOOTH_API}&n=#{limit}&q=#{wine}")
+    else
+      response = HTTParty.get("http://api.snooth.com/wines/?akey=#{SNOOTH_API}&n=#{limit}&q=#{wine}&color=#{color}")
+    end
     response_hash = JSON(response)
     response_hash["wines"]
   end

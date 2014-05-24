@@ -1,6 +1,16 @@
 <h1>Search Results:</h1>
 
-<% @wines.each do |wine| %>
-  <p><%= link_to wine["name"], selection_path + "?q=#{wine["name"]}" %></p>
 
-<% end %>
+  <table>
+    <tr>
+      <th>Name:</th>
+      <th>Price:</th>
+    </tr>
+    <% @wines.each do |wine| %>
+    <tr>
+      <td><%= link_to wine["name"], selection_path + "?q=#{wine["name"]}" %></td>
+      <td><%= wine["price"] %></td>
+    </tr>
+    <% end %>
+  </table>
+
