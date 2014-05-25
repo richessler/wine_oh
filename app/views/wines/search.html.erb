@@ -9,6 +9,8 @@
 
   <%= label_tag(:color, "Color:") %>
   <%= select_tag(:color, options_for_select(['red', 'white', 'rose', 'amber', 'clear']), {include_blank: 'name of your blank prompt'}) %>
+  <%= label_tag(:mp, "Min Price:") %>
+  <%= text_field_tag(:mp) %>
 
   <%= label_tag(:xp, "Max Price:") %>
   <%= text_field_tag(:xp) %>

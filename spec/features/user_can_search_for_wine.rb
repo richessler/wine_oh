@@ -1,4 +1,4 @@
-require 'spec_helper'
+  require 'spec_helper'
 
 describe 'User can search for a wine' do
   before :each do
@@ -34,6 +34,16 @@ describe 'User can search for a wine' do
     fill_in 'Max Price:', with: '15'
     click_button('Search')
     expect(page).to have_content('Barefoot Malbec' && 'Barefoot Pinot Noir')
+  end
+
+  it "can search by min price" do
+    fill_in 'Search for:', with: 'barefoot'
+    select '25', :from => 'Limit Search'
+    select 'red', :from => 'Color'
+    fill_in 'Min Price:', with: '10'
+    fill_in 'Max Price:', with: ''
+    click_button('Search')
+    # expect(page).to have_content('
   end
 end
 
