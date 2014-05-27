@@ -1,5 +1,9 @@
 <h1>Search for a Wine:</h1>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :p, msg, class: name %>
+<% end %>
+
 <%= form_tag("/results", method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
@@ -14,6 +18,12 @@
 
   <%= label_tag(:xp, "Max Price:") %>
   <%= text_field_tag(:xp) %>
+
+  <%= label_tag(:country, "Country") %>
+  <%= select_tag(:country, options_for_select(supported_countries)) %>
+
+  <%= label_tag(:sort, "Sort by:") %>
+  <%= select_tag(:sort, options_for_select( sort_options)) %>
 
   <%= submit_tag("Search") %>
 <% end %>

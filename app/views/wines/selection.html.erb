@@ -1,11 +1,29 @@
-<% @wines.each do |wine| %>
+<% @wine.each do |wine| %>
 
 <h1><%= wine["name"] %></h1>
 
-<h2>Region: <%= wine["region"] %></h2>
+  <h2>Region: <%= wine["region"] %></h2>
 
-<img src="<%= wine["image"] %>">
+    <img src="<%= wine["image"] %>">
 
-<p>Vintage: <%= wine["vintage"]%> </p>
+    <p>Vintage: <%= wine["vintage"]%> </p>
+
+    <p>Reviews: </p>
+    <% wine["reviews"].each do |review|%>
+    <ul class="reviews">
+      <% if review["body"] != '' %>
+        <li><%= review["name"] %> </li>
+        <li> <%= review["body"] %></li>
+      <% else %>
+      <% end %>
+    </ul>
+    <% end %>
+
+    <p>Suggested Pairings:</p>
+    <ul class="pairing_images">
+      <% wine["recipes"].each do |recipe|%>
+        <li><a href="<%= recipe["source_link"] %>"><img src="<%= recipe["image"] %>"></a></li>
+      <% end %>
+      </ul>
 
 <% end %>

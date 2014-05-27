@@ -8,8 +8,9 @@
     </tr>
     <% @wines.each do |wine| %>
     <tr>
-      <td><%= link_to wine["name"], selection_path + "?q=#{wine["name"]}" %></td>
+      <td><%= link_to wine["name"], selection_path + "?&id=#{wine["code"]}&food=1" %></td>
       <td><%= wine["price"] %></td>
+
     </tr>
     <% end %>
   </table>

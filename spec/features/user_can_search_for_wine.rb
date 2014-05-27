@@ -43,8 +43,12 @@ describe 'User can search for a wine' do
     fill_in 'Min Price:', with: '10'
     fill_in 'Max Price:', with: ''
     click_button('Search')
-    # expect(page).to have_content('
+    expect(page).to have_content('Barefoot Cellars Zinfandel California' && 'Barefoot Merlot')
   end
+
+
+  #Write test for ascending and descending prices
+  #vintages, and QPR
 end
 
 

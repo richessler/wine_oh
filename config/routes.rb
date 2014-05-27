@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/search' => 'wines#search'
   get '/results' => 'wines#results'
-  get '/selection' => 'wines#results'
+  get '/selection' => 'wines#selection'
 
   resources :wines, except: [:edit, :update]
 
