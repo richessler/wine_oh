@@ -1,0 +1,14 @@
+<h1>Wines Favorited</h1>
+
+  <% @wines.each do |wine| %>
+
+    <p><%= wine.name %></p>
+    <p>Price: $<%=wine.price%></p>
+    <p>Rating: <%=wine.rating%></p>
+    <p>Review: <%=wine.review%></p>
+    <img src = "<%= wine.image_url %>">
+
+    <%= form_for song, method: 'delete' do |f| %>
+    <%= f.submit "Remove Wine", id: "delete-wine-#{wine.id}" %>
+  <% end %>
+<% end %>

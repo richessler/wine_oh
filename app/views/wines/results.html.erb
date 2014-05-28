@@ -1,14 +1,16 @@
 <h1>Search Results:</h1>
 
-
   <table>
     <tr>
       <th>Name:</th>
+      <th>Vintage:</th>
       <th>Price:</th>
     </tr>
     <% @wines.each do |wine| %>
     <tr>
       <td><%= link_to wine["name"], selection_path + "?&id=#{wine["code"]}&food=1" %></td>
+        <% wine["vintage"] = 'NV' if wine["vintage"] == '' %>
+      <td><%= wine["vintage"] %></td>
       <td><%= wine["price"] %></td>
 
     </tr>

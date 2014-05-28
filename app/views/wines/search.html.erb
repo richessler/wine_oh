@@ -1,29 +1,29 @@
 <h1>Search for a Wine:</h1>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :p, msg, class: name %>
-<% end %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :p, msg, class: name %>
+  <% end %>
 
-<%= form_tag("/results", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
+  <%= form_tag("/results", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q, nil, placeholder: "Ex. Merlot, Pinot Noir") %>
 
-  <%= label_tag(:n, 'Limit Search:') %>
-  <%= select_tag(:n, options_for_select(1..100, 25))%>
+    <%= label_tag(:country, "Country") %>
+    <%= select_tag(:country, options_for_select(supported_countries), :prompt => "Select Country") %>
 
-  <%= label_tag(:color, "Color:") %>
-  <%= select_tag(:color, options_for_select(['red', 'white', 'rose', 'amber', 'clear']), {include_blank: 'name of your blank prompt'}) %>
-  <%= label_tag(:mp, "Min Price:") %>
-  <%= text_field_tag(:mp) %>
+    <%= label_tag(:n, 'Limit Search:') %>
+    <%= select_tag(:n, options_for_select(1..100, 25))%>
 
-  <%= label_tag(:xp, "Max Price:") %>
-  <%= text_field_tag(:xp) %>
+    <%= label_tag(:color, "Color:") %>
+    <%= select_tag(:color, options_for_select(['red', 'white', 'rose', 'amber', 'clear']), :prompt => 'Select Color') %>
+    <%= label_tag(:mp, "Min Price:") %>
+    <%= text_field_tag(:mp) %>
 
-  <%= label_tag(:country, "Country") %>
-  <%= select_tag(:country, options_for_select(supported_countries)) %>
+    <%= label_tag(:xp, "Max Price:") %>
+    <%= text_field_tag(:xp) %>
 
-  <%= label_tag(:sort, "Sort by:") %>
-  <%= select_tag(:sort, options_for_select( sort_options)) %>
+    <%= label_tag(:sort, "Sort by:") %>
+    <%= select_tag(:sort, options_for_select( sort_options), :prompt => "Sort by") %>
 
-  <%= submit_tag("Search") %>
-<% end %>
+    <%= submit_tag("Search") %>
+  <% end %>

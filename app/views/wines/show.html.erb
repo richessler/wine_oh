@@ -1,0 +1,13 @@
+<% @stores.each do |store| %>
+
+  <h1>Where to Buy Near <%= @zip %>
+
+  <h1><%= store["name"] %></h1>
+    <address>
+      <%= store["address"] %>
+      <%= store["city"] %>, <%= store["state"] %>
+      <%= store["number"] %>
+    </address>
+    <a href="<%=store["url"]%>">Website</a>
+
+<% end %>
