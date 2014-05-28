@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many :wines
+  has_many :wines, through: :favorites
+  has_many :favorites
 
   # Add handlers to run when creating and saving
   before_create :create_remember_token
@@ -38,9 +39,10 @@ class User < ActiveRecord::Base
   end
 
   def to_favorite(wine)
-    if update
+    binding.pry
+    if wine.new_record?
       # Purchase.create(user_id: self.id, song_id: song.id)
-      wines << wine
+      self.wines << wine
     end
   end
 

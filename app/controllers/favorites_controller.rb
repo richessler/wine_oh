@@ -2,13 +2,18 @@ class FavoritesController < ApplicationController
   before_action :find_user
 
   def create
-    @user.favorites.create(favorite_params)
-
-    if current_user.to_favorite(@wine)
-      redirect_to user_wines_path(current_user)
-    else
-      redirect_to search_path
+    wine = Wine.find_or_initialize_by(:snooth_id => params["snooth_id"]) do |wine|
+      wine.name       = params["name"]
+      wine.snooth_id  = params["snooth_id"]
+      wine.region     = params["region"]
+      wine.image_url  = params["image_url"]
     end
+
+    if wine.valid? && !@user.wines.exists?(wine)
+        @user.wines << wine
+      end
+      redirect_to user_path(current_user)
+
   end
 
   def destroy
@@ -23,11 +28,18 @@ class FavoritesController < ApplicationController
 
   def favorite_params
     params.require(:favorite).permit(
-      :name,
-      :code,
-      :image_url,
-      :rating,
-      :review
+      :wine_id,
+      :user_id,
+      :rating
     )
+  end
+
+  def wine_params
+    params.require(:wine).permit(
+      :name,
+      :snooth_id,
+      :region,
+      :image_url
+      )
   end
 end

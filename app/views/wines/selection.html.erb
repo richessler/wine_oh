@@ -38,8 +38,13 @@
       </p>
     <% end %>
 
-  <% if signed_in? %>
-    <%= form_tag(user_favorites_path(@user, @wine), method: :post) do %>
+    <% if signed_in? %>
+    <%= form_tag user_favorites_path(@current_user) do %>
+
+      <%= hidden_field wine["wine_code"], "snooth_id", value: wine["code"]  %>
+      <%= hidden_field wine["wine_code"], "name", value: wine["name"]  %>
+      <%= hidden_field wine["wine_code"], "region", value: wine["region"]  %>
+      <%= hidden_field wine["wine_code"], "image_url", value: wine["image"]  %>
 
       <%= submit_tag 'Favorite' %>
     <% end %>
