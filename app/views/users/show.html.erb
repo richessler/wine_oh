@@ -7,7 +7,8 @@
 <h1>Favorite Wines</h1>
 <ul>
   <% current_user.wines.each do |wine| %>
-  <li><%= link_to wine["name"], selection_path + "?&id=#{wine["snooth_id"]}&food=1" %></li>
+
+  <li><img src="<%= wine["image_url"] %>"><%= link_to wine["name"], selection_path + "?&id=#{wine["snooth_id"]}&food=1" %></li>
 
   <% end %>
 </ul>

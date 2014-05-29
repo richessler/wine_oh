@@ -1,30 +1,46 @@
-<% if @user.errors.any? %>
-  <b>Errors:</b>
-  <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<body class="sign-up">
+  <div class="pull-right" id="sign_up">
+    <h1>Sign Up</h1>
+  <% if @user.errors.any? %>
+    <b>Errors:</b>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+  <%= form_for @user do |f| %>
+    <div class="form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, placeholder: "Inhak", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "Kim", class: "form-control" %>
+    </div>
+    <div class="form-group" id="age">
+      <%= f.label :age %>
+      <%= f.select(:age, (21..100), :prompt => "Age", class: "form-control") %>
+    </div>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder: "Inhakka@flakka.com", class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "************", class: "form-control" %>
+    </div>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+    <div class="form-group">
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.password_field :password_confirmation, placeholder: "************", class: "form-control" %>
+    </div>
 
-  <%= f.label :age %>
-  <%= f.select :age, (21..100) %>
+    <div class="form-group" id="button">
+      <%= f.submit "Submit", id: 'submit', type: "submit", class: "btn btn-default btn-custom btn-lg btn-primary center-block" %>
+    </div>
+  <% end %>
+</div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation, 'Confirm Password' %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Submit", id: 'submit' %>
-<% end %>
+</body>

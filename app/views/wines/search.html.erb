@@ -1,29 +1,43 @@
-<h1>Search for a Wine:</h1>
 
+<body class="sign-in" role="form">
+  <div class="pull-right" id="sign_in">
+    <h1>Search for a Wine:</h1>
   <% flash.each do |name, msg| %>
     <%= content_tag :p, msg, class: name %>
   <% end %>
 
   <%= form_tag("/results", method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q, nil, placeholder: "Ex. Merlot, Pinot Noir") %>
-
-    <%= label_tag(:country, "Country") %>
-    <%= select_tag(:country, options_for_select(supported_countries), :prompt => "Select Country") %>
-
-    <%= label_tag(:n, 'Limit Search:') %>
-    <%= select_tag(:n, options_for_select(1..100, 25))%>
-
-    <%= label_tag(:color, "Color:") %>
-    <%= select_tag(:color, options_for_select(['red', 'white', 'rose', 'amber', 'clear']), :prompt => 'Select Color') %>
-    <%= label_tag(:mp, "Min Price:") %>
-    <%= text_field_tag(:mp) %>
-
-    <%= label_tag(:xp, "Max Price:") %>
-    <%= text_field_tag(:xp) %>
-
-    <%= label_tag(:sort, "Sort by:") %>
-    <%= select_tag(:sort, options_for_select( sort_options), :prompt => "Sort by") %>
-
-    <%= submit_tag("Search") %>
+    <div class="form-group">
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q, nil, placeholder: "Ex. Merlot, Pinot Noir", class: "form-control") %>
+    </div>
+    <div class="form-group">
+        <%= label_tag(:country, "Country") %>
+        <%= select_tag(:country, options_for_select(supported_countries), :prompt => "Select Country", class: "form-control") %>
+    </div>
+    <div class="form-group">
+        <%= label_tag(:n, 'Limit Search:') %>
+        <%= select_tag(:n, options_for_select(1..100, 25), class: "form-control")%>
+    </div>
+    <div class="form-group">
+        <%= label_tag(:color, "Color:") %>
+        <%= select_tag(:color, options_for_select(['red', 'white', 'rose', 'amber', 'clear']), :prompt => 'Select Color', class: "form-control") %>
+    </div>
+    <div class="form-group">
+        <%= label_tag(:mp, "Min Price:") %>
+        <%= text_field_tag(:mp,nil, class: "form-control") %>
+    </div>
+    <div class="form-group">
+        <%= label_tag(:xp, "Max Price:") %>
+        <%= text_field_tag(:xp, nil,class: "form-control") %>
+    </div>
+    <div class="form-group">
+        <%= label_tag(:sort, "Sort by:") %>
+        <%= select_tag(:sort, options_for_select(sort_options), :prompt => "Sort by", class: "form-control") %>
+    </div>
+    <div class="form-group" id="button">
+        <%= submit_tag("Search", class: "btn btn-default btn-custom btn-lg btn-primary center-block") %>
+    </div>
   <% end %>
+</div>
+</body>

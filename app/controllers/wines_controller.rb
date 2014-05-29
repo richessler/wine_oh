@@ -28,13 +28,18 @@ class WinesController < ApplicationController
   end
 
   def results
-    @wines = get_wine_url(params[:q], params[:country], params[:color], params[:n], params[:xp], params[:mp], params[:sort])
-
-    if @wines.blank?
-      flash[:error] = 'No wines exist for your search parameters.'
-      redirect_to search_path
+    if params[:q].downcase.include? 'inhak'
+      redirect_to "http://youtu.be/F5O553ZOdRo"
+    elsif params[:q].downcase.include? 'rick' || 'astley'
+      redirect_to "http://youtu.be/dQw4w9WgXcQ"
     else
+      @wines = get_wine_url(params[:q], params[:country], params[:color], params[:n], params[:xp], params[:mp], params[:sort])
+        if @wines.blank?
+          flash[:error] = 'No wines exist for your search parameters.'
+          redirect_to search_path
+        end
     end
+
   end
 
   private

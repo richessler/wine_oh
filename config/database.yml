@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: wine_oh_production
-  username: wine_oh
+
   password: <%= ENV['WINE_OH_DATABASE_PASSWORD'] %>

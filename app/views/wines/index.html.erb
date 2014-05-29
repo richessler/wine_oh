@@ -9,6 +9,6 @@
     <img src = "<%= wine.image_url %>">
 
     <%= form_for song, method: 'delete' do |f| %>
-    <%= f.submit "Remove Wine", id: "delete-wine-#{wine.id}" %>
+    <%= f.submit 'Remove Wine', id: 'delete-wine-#{wine.id}' %>
   <% end %>
 <% end %>

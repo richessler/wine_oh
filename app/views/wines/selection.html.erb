@@ -1,53 +1,54 @@
-<% @wine.each do |wine| %>
+<body class="selection">
+  <% @wine.each do |wine| %>
 
-  <h1><%= wine["name"] %></h1>
+    <h1><%= wine["name"] %></h1>
 
-    <h2>Region: <%= wine["region"] %></h2>
+      <h2>Region: <%= wine["region"] %></h2>
 
-      <img src="<%= wine["image"] %>">
+        <img src="<%= wine["image"] %>">
 
-      <p>Vintage: <%= wine["vintage"]%> </p>
-      <p>Notes: <%= wine["lang"] %></p>
+        <p>Vintage: <%= wine["vintage"]%> </p>
+        <p>Notes: <%= wine["lang"] %></p>
 
-      <p>Reviews: </p>
-        <% wine["reviews"].each do |review|%>
-        <ul class="reviews">
-          <% if review["body"] != '' %>
-            <li><%= review["name"] %> </li>
-            <li> <%= review["body"] %></li>
-          <% else %>
-          <% end %>
-        </ul>
+        <p>Reviews: </p>
+          <% wine["reviews"].each do |review|%>
+          <ul class="reviews">
+            <% if review["body"] != '' %>
+              <li><%= review["name"] %> </li>
+              <li> <%= review["body"] %></li>
+            <% else %>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <p>Suggested Pairings:</p>
+          <ul class="pairing_images">
+            <% wine["recipes"].each do |recipe|%>
+              <li>
+                <a href="<%= recipe["source_link"] %>"><img src="<%= recipe["image"] %>"></a>
+              </li>
+            <% end %>
+          </ul>
+
+      <%= form_tag("/show", :method => 'get') do%>
+        <p>
+        <%= hidden_field_tag(:id, wine["code"]) %>
+        <%= label_tag(:z, "Search Zip Codes:") %>
+        <%= text_field_tag(:z, nil, placeholder: "Ex. 20001") %>
+        <%= submit_tag 'Search' %>
+        </p>
       <% end %>
 
-      <p>Suggested Pairings:</p>
-        <ul class="pairing_images">
-          <% wine["recipes"].each do |recipe|%>
-            <li>
-              <a href="<%= recipe["source_link"] %>"><img src="<%= recipe["image"] %>"></a>
-            </li>
-          <% end %>
-        </ul>
+      <% if signed_in? %>
+      <%= form_tag user_favorites_path(@current_user) do %>
 
-    <%= form_tag("/show", :method => 'get') do%>
-      <p>
-      <%= hidden_field_tag(:id, wine["code"]) %>
-      <%= label_tag(:z, "Search Zip Codes:") %>
-      <%= text_field_tag(:z, nil, placeholder: "Ex. 20001") %>
-      <%= submit_tag 'Search' %>
-      </p>
-    <% end %>
+        <%= hidden_field wine["wine_code"], "snooth_id", value: wine["code"]  %>
+        <%= hidden_field wine["wine_code"], "name", value: wine["name"]  %>
+        <%= hidden_field wine["wine_code"], "region", value: wine["region"]  %>
+        <%= hidden_field wine["wine_code"], "image_url", value: wine["image"]  %>
 
-    <% if signed_in? %>
-    <%= form_tag user_favorites_path(@current_user) do %>
-
-      <%= hidden_field wine["wine_code"], "snooth_id", value: wine["code"]  %>
-      <%= hidden_field wine["wine_code"], "name", value: wine["name"]  %>
-      <%= hidden_field wine["wine_code"], "region", value: wine["region"]  %>
-      <%= hidden_field wine["wine_code"], "image_url", value: wine["image"]  %>
-
-      <%= submit_tag 'Favorite' %>
+        <%= submit_tag 'Favorite' %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
-
+</body>
