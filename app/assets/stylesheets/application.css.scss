@@ -13,8 +13,6 @@
  *= require_tree .
  *= require_self
  */
-@import url(http://fonts.googleapis.com/css?family=Comfortaa);
-
 div.header {
   height: 225px;
 }
@@ -27,7 +25,7 @@ div.form-group {
   margin: 5px 0;
 }
 body.home-page {
-  background:url(http://www.maestro2300.com/cms/wp-content/uploads/2012/04/wine1-bg1.jpg) no-repeat;
+  background: url(http://www.maestro2300.com/cms/wp-content/uploads/2012/04/wine1-bg1.jpg) no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -67,7 +65,7 @@ div.selection-list {
   z-index: 2;
 
   h1 {
-    font-family: Comfortaa, cursive;
+    font-family: 'Comfortaa', cursive;
     font-size: 4em;
     color: #610000;
     font-style: bold;

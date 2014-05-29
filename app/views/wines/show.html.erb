@@ -1,12 +1,16 @@
-<h1>Where to Buy Near <%= @zip %>
-<% @stores.first(10).each do |store| %>
+<body class="address">
+  <div class="address-list">
+    <h1>Where to Buy Near <%= @zip %>
+    <% @stores.first(10).each do |store| %>
 
-  <h3><%= store["name"] %></h3>
-    <address>
-      <%= store["address"] %>
-      <%= store["city"] %>, <%= store["state"] %>
-      <%= store["number"] %>
-    </address>
-    <a href="<%=store["url"]%>">Website</a>
+      <h3><%= store["name"] %></h3>
+        <address>
+          <%= store["address"] %>
+          <%= store["city"] %>, <%= store["state"] %>
+          <%= store["number"] %>
+        </address>
+        <a href="<%=store["url"]%>">Website</a>
 
-<% end %>
+    <% end %>
+  </div>
+</body>
