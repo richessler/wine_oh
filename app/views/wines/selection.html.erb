@@ -1,34 +1,70 @@
 <body class="selection">
-  <% @wine.each do |wine| %>
+  <div class="selection-list">
+    <% @wine.each do |wine| %>
+      <div class="selection-title">
+        <h1><%= wine["name"] %></h1>
+          <h3><strong>Region</strong>: <%= wine["region"] %></h3>
+      </div>
+    <div class="header">
+      <div class="selection-info">
+        <img src="<%= wine["image"] %>" class="col-xs-4">
+        <p><strong>Vintage</strong>: <%= wine["vintage"]%></p>
+        <p><strong>Varietal</strong>: <%= wine["varietal"] %>
+          <% if wine["sugar"] != '' %>
+        <P class="bold"><strong>Attributes of Wine</strong></p>
+          <ul class="pull-right">
+            <li><%= wine["sugar"] %></li>
+            <li><%= wine["alcohol"] %></li>
+            <li><%= wine["ph"] %></li>
+            <li><%= wine["acidity"] %></li>
+          </ul>
+          <% end %>
+          <% if wine["wm_notes"] != '' %>
+        <p><strong>Wine Maker's Notes</strong>: <%= wine["wm_notes"] %></p>
+          <% end %>
+      </div>
+    </div>
 
-    <h1><%= wine["name"] %></h1>
-
-      <h2>Region: <%= wine["region"] %></h2>
-
-        <img src="<%= wine["image"] %>">
-
-        <p>Vintage: <%= wine["vintage"]%> </p>
-        <p>Notes: <%= wine["lang"] %></p>
-
-        <p>Reviews: </p>
+    <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            <strong>Reviews</strong>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
           <% wine["reviews"].each do |review|%>
-          <ul class="reviews">
-            <% if review["body"] != '' %>
-              <li><%= review["name"] %> </li>
-              <li> <%= review["body"] %></li>
-            <% else %>
-            <% end %>
-          </ul>
-        <% end %>
+          <% if review["body"] != '' %>
+          <h5><strong><%= review["name"] %></strong></h5>
+          <p><%= review["body"] %></p>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-        <p>Suggested Pairings:</p>
-          <ul class="pairing_images">
-            <% wine["recipes"].each do |recipe|%>
-              <li>
-                <a href="<%= recipe["source_link"] %>"><img src="<%= recipe["image"] %>"></a>
-              </li>
-            <% end %>
-          </ul>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          <strong>Recipes</strong>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <% wine["recipes"].each do |recipe|%>
+
+        <a href="<%= recipe["source_link"] %>"><img src="<%= recipe["image"] %>"></a>
+        <% end %>
+        </div>
+      </div>
+    </div>
+</div>
 
       <%= form_tag("/show", :method => 'get') do%>
         <p>
@@ -51,4 +87,5 @@
       <% end %>
     <% end %>
   <% end %>
+  </div>
 </body>
