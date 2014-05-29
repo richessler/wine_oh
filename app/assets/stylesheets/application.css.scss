@@ -40,7 +40,8 @@ body.sign-in {
 }
 
 body.results,
-body.selection {
+body.selection,
+body.address {
   background-color: #480000;
   background-size: cover;
   width: 100%;
@@ -52,8 +53,13 @@ body.selection {
   }
 }
 
+.thumbnail {
+  display: inline-block;
+  float: left;
+}
 div.result-list,
-div.selection-list {
+div.selection-list,
+div.address-list {
   background-color: rgba(245,247,208, 1.0);
   border: 2px solid black;
   border-radius: 5px;

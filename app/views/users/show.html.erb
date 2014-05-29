@@ -1,17 +1,19 @@
-<h1><%= @user.first_name %></h1>
+<body class="address">
+  <div class="address-list">
+    <h1><%= @user.first_name %></h1>
 
-  <p><%= @user.email %></p>
+      <p><%= @user.email %></p>
 
-  <p><%= link_to "Edit", edit_user_path(@user) %></p>
+      <p><%= link_to "Edit", edit_user_path(@user) %></p>
 
-<h1>Favorite Wines</h1>
-<ul>
-  <% current_user.wines.each do |wine| %>
+    <h1>Favorite Wines</h1>
+    <ul>
+      <% current_user.wines.each do |wine| %>
 
-  <li><img src="<%= wine["image_url"] %>"><%= link_to wine["name"], selection_path + "?&id=#{wine["snooth_id"]}&food=1" %></li>
-
-  <% end %>
-</ul>
-
+      <li><img src="<%= wine["image_url"] %>" class="img-responsive"><%= link_to wine["name"], selection_path + "?&id=#{wine["snooth_id"]}&food=1" %></li>
+      <% end %>
+    </ul>
+  </div>
+</body>
 
 

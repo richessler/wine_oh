@@ -7,17 +7,17 @@
       </div>
     <div class="header">
       <div class="selection-info">
-        <img src="<%= wine["image"] %>" class="col-xs-4">
+        <img src="<%= wine["image"] %>" class="col-xs-4 img-responsive">
         <p><strong>Vintage</strong>: <%= wine["vintage"]%></p>
         <p><strong>Varietal</strong>: <%= wine["varietal"] %>
           <% if wine["sugar"] != '' %>
         <P class="bold"><strong>Attributes of Wine</strong></p>
-          <ul class="pull-right">
-            <li><%= wine["sugar"] %></li>
-            <li><%= wine["alcohol"] %></li>
-            <li><%= wine["ph"] %></li>
-            <li><%= wine["acidity"] %></li>
-          </ul>
+          <p>
+           <strong>Sugar:</strong> <%= wine["sugar"] %>g/l
+           <strong>Alcohol:</strong> <%= wine["alcohol"] %>%
+           <strong>pH:</strong> <%= wine["ph"] %>
+           <strong>TA:(total acidity):</strong> <%= wine["acidity"] %>
+          </p>
           <% end %>
           <% if wine["wm_notes"] != '' %>
         <p><strong>Wine Maker's Notes</strong>: <%= wine["wm_notes"] %></p>
@@ -58,8 +58,12 @@
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
         <% wine["recipes"].each do |recipe|%>
+          <div class="col-xs-6 col-md-4">
+            <a href="<%= recipe["source_link"] %>" class="thumbnail" data-toggle="tooltip" data-placement="top" title="<%= recipe["name"]%>">
+              <img src="<%= recipe["image"] %>" class = "img-responsive" alt="...">
+            </a>
+          </div>
 
-        <a href="<%= recipe["source_link"] %>"><img src="<%= recipe["image"] %>"></a>
         <% end %>
         </div>
       </div>
