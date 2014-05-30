@@ -17,6 +17,8 @@ class WinesController < ApplicationController
   #     all
   #   end
   # end
+  def presentation
+  end
 
   def show
     @stores = get_store_info(params[:z])
