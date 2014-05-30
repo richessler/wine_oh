@@ -31,7 +31,9 @@
 A full list of user stories can be found by looking at [this Pivotal Tracker Project](https://www.pivotaltracker.com/s/projects/1086732)
 
 ### ERD
-![](tunr_erd.png)
+![My ERD(Entity Relationship Diagram)](http://www.gliffy.com/go/publish/image/5786016/L.png)
+
+
 
 ---
 ###### Written by Richard Hessler
