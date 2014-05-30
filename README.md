@@ -4,7 +4,7 @@
 
 ### Overview
 
-**wine-oh!** is a comprehensive wine application for design to allow a user to search for wines, find professional reviews of wines, technical details, price, and even food pairings for wines.  The application will also allow you to locate a store wihtin your vicinity to purchase. wine-oh! was developed by Richard Hessler as the first individual project for the inagural class of the District of Columbia Web Development Immersive course at General Assembly. It was developed over a 5 day sprint and was meant to test what we've learned in the past 5 weeks of class.  This project will continue to be worked on by the sole deleloper, but a branch of the 'finished project' which was presented on May 30, 2014 will remain.
+**wine-oh!** is a comprehensive wine application designed to allow a user to search for wines, find professional reviews of wines, technical details, price, and even food pairings for wines.  The application will also allow you to locate a store wihtin your vicinity to purchase. wine-oh! was developed by Richard Hessler as the first individual project for the inagural class of the District of Columbia Web Development Immersive course at General Assembly. It was developed over a 5 day sprint and was meant to test what we've learned in the past 5 weeks of class.  This project will continue to be worked on by the sole deleloper, but a branch of the 'finished project' which was presented on May 30, 2014 will remain.
 
 ### Technologies Used
 
