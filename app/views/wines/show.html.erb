@@ -1,16 +1,26 @@
 <body class="address">
   <div class="address-list">
-    <h1>Where to Buy Near <%= @zip %>
+    <h1 class="text-center">Where to Buy Near <%= @zip %></h1>
     <% @stores.first(10).each do |store| %>
 
-      <h3><%= store["name"] %></h3>
-        <address>
-          <%= store["address"] %>
-          <%= store["city"] %>, <%= store["state"] %>
-          <%= store["number"] %>
-        </address>
-        <a href="<%=store["url"]%>">Website</a>
+      <div class="panel panel-default" style="margin-left: 15px; margin-right: 15px">
+        <div class="panel-heading">
+          <h3 class="panel-title"><h3><%= store["name"] %></h3></h3>
+        </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-8">
+                <address>
+                  <%= store["address"] %>
+                  <%= store["city"] %>, <%= store["state"] %>
+                  <%= store["number"] %>
+                </address>
+                <a href="<%=store["url"]%>">Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-    <% end %>
-  </div>
 </body>
