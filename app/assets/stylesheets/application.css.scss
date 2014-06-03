@@ -114,7 +114,7 @@ div.presentation {
 
 
 .thumbnail-list p {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 /*end Hover for Recipe Display */
@@ -156,42 +156,56 @@ div.header {
   height: 100%;
 }
 
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  padding: 100px;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  min-height: 100%;
 }
 
 div.form-group {
   margin: 5px 0;
 }
-body.home-page {
-  background: url(http://www.maestro2300.com/cms/wp-content/uploads/2012/04/wine1-bg1.jpg) no-repeat;
-  background-size: cover;
+div.home-page {
+  background: url("http://www.maestro2300.com/cms/wp-content/uploads/2012/04/wine1-bg1.jpg") no-repeat;
+  background-size: 100%;
+  height:100%;
   width: 100%;
-  height: 100%;
+
 }
 
-body.sign-up,
-body.sign-in {
+div.sign-up,
+div.sign-in {
   background: url(http://www.made-in-italy.com/files/imagecache/lg/pictures/italian-wine/regions/grapes-bottle-and-glass-of-red-wine.jpg) no-repeat;
-  background-size: cover;
+  background-size: 100%;
   width: 100%;
   height: 100%;
 }
 
-body.results,
-body.selection,
-body.address,
-body.profile {
+div.results,
+div.selection,
+div.address,
+div.profile {
   background-color: #480000;
-  background-size: cover;
-  width: 100%;
+  background-size: 100%;
   height: 100%;
+  padding: 80px 0 0 0;
+  width: 100%;
   z-index: 1;
 
   .selection-title h1 {
     font-size: 3em;
     text-align: center;
   }
+}
+
+.panel-div {
+  padding: 10px 20px;
 }
 
 div.panel.panel-default {
@@ -295,14 +309,11 @@ nav div div a {
 
 div#sign_up.pull-right,
 div#sign_in.pull-right {
-  margin: 100px 200px 0 0;
+  margin: 130px 200px 0 0;
   text-align: center;
   color: #D5CBCB;
 }
 
-div#sign_in.pull-right {
-  margin: 30px 200px;
-}
 a.brand {
   float: left;
   display: inline-block;
@@ -340,10 +351,11 @@ ul {
 }
 
 .nav {
-  margin-bottom: -20;
+  margin-bottom: -20px;
 }
 .navbar .nav {
   width: 1100px;
+
 }
 
 .navbar .nav li:last-child {
