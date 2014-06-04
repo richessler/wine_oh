@@ -176,7 +176,7 @@ div.form-group {
 }
 div.home-page {
   background: url("http://www.maestro2300.com/cms/wp-content/uploads/2012/04/wine1-bg1.jpg") no-repeat;
-  background-size: 100%;
+  background-size: cover;
   height:100%;
   width: 100%;
 
@@ -273,8 +273,8 @@ div.jumbotron {
   background-color: rgba( 250, 250, 250, .65);
   border-radius: 10px;
   height: 300px;
-  margin-top: 12%;
-  margin-left: 35%;
+  margin-top: 15%;
+  left: 9%;
   position: relative;
   text-align: center;
 
