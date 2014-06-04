@@ -47,7 +47,9 @@ div.presentation {
       padding: 0 0 5px 0;
     }
 }
-
+h1.form-title {
+  float: left;
+}
 .scary {
       color: red;
       font-style: bold;
@@ -170,6 +172,7 @@ body {
 
 div.form-group {
   margin: 5px 0;
+  clear: left;
 }
 div.home-page {
   background: url("http://www.maestro2300.com/cms/wp-content/uploads/2012/04/wine1-bg1.jpg") no-repeat;
@@ -180,9 +183,10 @@ div.home-page {
 }
 
 div.sign-up,
-div.sign-in {
+div.sign-in,
+div.search {
   background: url(http://www.made-in-italy.com/files/imagecache/lg/pictures/italian-wine/regions/grapes-bottle-and-glass-of-red-wine.jpg) no-repeat;
-  background-size: 100%;
+  background-size: cover;
   width: 100%;
   height: 100%;
 }
@@ -307,11 +311,11 @@ nav div div a {
   float: left;
   }
 
-div#sign_up.pull-right,
-div#sign_in.pull-right {
-  margin: 130px 200px 0 0;
-  text-align: center;
+div#sign_up,
+div#sign_in {
   color: #D5CBCB;
+  padding-top: 140px;
+  text-align: center;
 }
 
 a.brand {
