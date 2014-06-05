@@ -158,12 +158,14 @@ div.header {
   height: 100%;
 }
 
-body, html {
-  height: cover;
+ html {
+  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
 body {
+  height: 100%;
   padding: 0;
   width: 100%;
   margin: 0;
@@ -197,7 +199,7 @@ div.address,
 div.profile {
   background-color: #480000;
   background-size: 100%;
-  height: 100%;
+  height: cover;
   padding: 80px 0 0 0;
   width: 100%;
   z-index: 1;
