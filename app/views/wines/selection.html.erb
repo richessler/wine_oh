@@ -35,14 +35,11 @@
         </h4>
       </div>
       <div id="collapseOne" class="panel-collapse collapse in">
-        <div class="panel-div
-      ">
+        <div class="panel-div">
           <% wine["reviews"].each do |review|%>
-          <% if review["div
-          "] != '' %>
+          <% if review["body"] != '' %>
           <h5><strong><%= review["name"] %></strong></h5>
-          <p><%= review["div
-          "] %></p>
+          <p><%= review["body"] %></p>
           <% end %>
           <% end %>
         </div>
@@ -59,8 +56,7 @@
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-div
-    ">
+      <div class="panel-div">
         <% wine["recipes"].each do |recipe|%>
           <div class="col-xs-6 col-md-4 thumbnail-list">
             <a href="<%= recipe["source_link"] %>" class="thumbnail image-w" data-toggle="tooltip" data-placement="top" title="<%= recipe["name"]%>">
