@@ -198,10 +198,10 @@ div.selection,
 div.address,
 div.profile {
   background-color: #480000;
-  background-size: 100%;
+  background-size: cover;
   height: cover;
+  width: cover;
   padding: 80px 0 0 0;
-  width: 100%;
   z-index: 1;
 
   .selection-title h1 {
@@ -234,11 +234,11 @@ div.profile-list {
   border: 2px solid black;
   border-radius: 5px;
   display: block;
-  padding: 20px;
-  margin: -20px auto 0 auto;
-  max-width: 720px;
-  width: 100%;
-  z-index: 2;
+  // padding: 20px;
+  // margin: -20px auto 0 auto;
+  // max-width: 720px;
+  // width: 100%;
+  // z-index: 2;
 
   h1 {
     font-family: 'Comfortaa', cursive;
@@ -289,7 +289,7 @@ div.jumbotron {
 
 nav div div a {
   font-family: 'Salsa', cursive;
-      color: #610000;
+  color: #610000;
 }
 
 .btn-custom {
@@ -325,19 +325,15 @@ a.brand {
   display: inline-block;
 }
 
-ul.nav.navbar-nav {
-  width: 1200px
-}
-
 div div div div ul.nav {
   display: inline-block;
   float: right;
   width: 1050px;
 }
 
-.navbar>.container-fluid .navbar-brand {
-margin-left: 15px;
-}
+// .navbar>.container-fluid .navbar-brand {
+// margin-left: 15px;
+// }
 
 fluid>.navbar-collapse {
 margin-right: 20px;
@@ -356,17 +352,65 @@ ul {
   margin-top: 10px;
 }
 
-.nav {
-  margin-bottom: -20px;
-}
-.navbar .nav {
-  width: 1100px;
+@media (max-width: 800px) {
 
-}
+  div.jumbotron {
+    margin-top: 35%;
+  }
 
-.navbar .nav li:last-child {
-  float: right;
-  margin: 10px 0 0 0;
+  body {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    top: 0;
+  }
+
+  div.sign-up{
+    padding-top: 15%;
+    color: #f7f5f5;
+  }
+  div#sign_up,
+  div#sign_in {
+  color: #f7f5f5;
+  float: none;
+  padding-left: 9px;
+  padding-top: 35px;
+  margin-top: 3%;
+  margin: 0 auto;
+  text-align: center;
+    h1{
+      font-size:  2em;
+      text-align: center;
+      float: none;
+    }
+    div.form-group{
+      margin: -1px;
+      width: 85%;
+      margin-left: 10%;
+    }
+    div.form-group#button{
+        margin-top: 8px;
+      }
+  }
+  div#sign_in {
+    padding-top: 120px;
+  }
 }
+// .nav {
+  //   margin-bottom: -20px;
+// }
+// .navbar .nav {
+//   width: 1100px;
+
+// }
+
+// .navbar .nav li:last-child {
+//   float: right;
+//   margin: 10px 0 0 0;
+// }
 
 

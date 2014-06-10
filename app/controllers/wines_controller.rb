@@ -5,18 +5,6 @@ class WinesController < ApplicationController
     @wines = Wine.all
   end
 
-
-  #
-  # for self search page
-  #
-  #
-  # def self.search(query)
-  #   if query
-  #     where('name ILIKE ?', "%#{query}%")
-  #   else
-  #     all
-  #   end
-  # end
   def presentation
   end
 
