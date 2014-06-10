@@ -189,7 +189,7 @@ div.sign-in,
 div.search {
   background: url("http://www.made-in-italy.com/files/imagecache/lg/pictures/italian-wine/regions/grapes-bottle-and-glass-of-red-wine.jpg") no-repeat;
   background-size: cover;
-  width: 100%;
+  width: cover;
   height: 100%;
 }
 
@@ -374,7 +374,7 @@ ul {
     color: #f7f5f5;
   }
   div#sign_up,
-  div#sign_in {
+  div#sign_in, {
   color: #f7f5f5;
   float: none;
   padding-left: 9px;
