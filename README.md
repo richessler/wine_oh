@@ -4,7 +4,9 @@
 
 ### Overview
 
-**wine-oh!** is a comprehensive wine application designed to allow a user to search for wines, find professional reviews of wines, technical details, price, and even food pairings for wines.  The application will also allow you to locate a store wihtin your vicinity to purchase. wine-oh! was developed by Richard Hessler as the first individual project for the inagural class of the District of Columbia Web Development Immersive course at General Assembly. It was developed over a 5 day sprint and was meant to test what we've learned in the past 5 weeks of class.  This project will continue to be worked on by the sole deleloper, but a branch of the 'finished project' which was presented on May 30, 2014 will remain.
+**[wine-oh!](https://wine-oh.herokuapp.com/)** is a comprehensive wine application designed to allow a user to search for wines, find professional reviews of wines, technical details, price, food pairings, and more.  The application will also allow you to locate a store wihtin your vicinity to purchase. 
+
+[wine-oh!](https://wine-oh.herokuapp.com/) was developed by [Richard Hessler](http://richardhessler.com/) as the first individual project for the inaugural class of the District of Columbia Web Development Immersive course at [General Assemb.ly](https://generalassemb.ly/washington-dc). It was developed over a 5 day sprint and was meant to test what we've learned in the past 5 weeks of class.  This project will continue to be worked on by the sole deleloper, but a branch of the 'finished project' which was presented on May 30, 2014 will remain.
 
 ### Technologies Used
 
@@ -36,4 +38,4 @@ A full list of user stories can be found by looking at [this Pivotal Tracker Pro
 
 
 ---
-###### Written by Richard Hessler
+###### Written by [Richard Hessler](http://richardhessler.com/)
